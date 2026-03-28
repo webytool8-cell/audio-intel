@@ -1,4 +1,4 @@
-import { Sound, TrendHistory } from './types';
+import { Sound, TrendHistory, Clip } from './types';
 
 export const MOCK_SOUNDS: Sound[] = [
   {
@@ -15,6 +15,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Hype',
     mood: 'Dark',
     tags: ['rap', 'flex', 'viral', 'westcoast'],
+    bpm: 95,
+    energy_level: 9,
+    best_segments: [{ start: 0, end: 15 }, { start: 16, end: 30 }],
     created_at: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -32,6 +35,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Chill',
     mood: 'Chill',
     tags: ['chill', 'travel', 'vibes', 'summer'],
+    bpm: 72,
+    energy_level: 4,
+    best_segments: [{ start: 0, end: 15 }, { start: 10, end: 28 }],
     created_at: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -49,6 +55,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Cinematic',
     mood: 'Emotional',
     tags: ['romantic', 'wedding', 'emotional', 'pop'],
+    bpm: 63,
+    energy_level: 3,
+    best_segments: [{ start: 0, end: 15 }, { start: 15, end: 30 }],
     created_at: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -66,6 +75,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Meme',
     mood: 'Funny',
     tags: ['meme', 'dance', 'pop', 'vibes'],
+    bpm: 160,
+    energy_level: 8,
+    best_segments: [{ start: 0, end: 12 }, { start: 12, end: 24 }],
     created_at: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -83,6 +95,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Hype',
     mood: 'Energetic',
     tags: ['pop', 'dance', 'club', 'viral'],
+    bpm: 96,
+    energy_level: 7,
+    best_segments: [{ start: 0, end: 15 }, { start: 10, end: 27 }],
     created_at: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -100,6 +115,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'NBA',
     mood: 'Hype',
     tags: ['nba', 'basketball', 'highlights', 'hype'],
+    bpm: 140,
+    energy_level: 10,
+    best_segments: [{ start: 0, end: 10 }, { start: 10, end: 20 }],
     created_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -117,6 +135,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Meme',
     mood: 'Funny',
     tags: ['meme', 'retro', 'dance', 'throwback'],
+    bpm: 132,
+    energy_level: 7,
+    best_segments: [{ start: 0, end: 15 }, { start: 12, end: 30 }],
     created_at: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -134,6 +155,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Viral',
     mood: 'Energetic',
     tags: ['pop', 'dance', 'viral', 'comeback'],
+    bpm: 100,
+    energy_level: 6,
+    best_segments: [{ start: 0, end: 15 }, { start: 10, end: 25 }],
     created_at: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -151,6 +175,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'NBA',
     mood: 'Dramatic',
     tags: ['nba', 'cinematic', 'hype', 'superhero'],
+    bpm: 145,
+    energy_level: 9,
+    best_segments: [{ start: 0, end: 10 }, { start: 8, end: 18 }],
     created_at: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -168,6 +195,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Chill',
     mood: 'Emotional',
     tags: ['pop', 'empowerment', 'viral', 'summer'],
+    bpm: 78,
+    energy_level: 4,
+    best_segments: [{ start: 0, end: 15 }, { start: 8, end: 23 }],
     created_at: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -185,6 +215,9 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Cinematic',
     mood: 'Dramatic',
     tags: ['classic', 'cinematic', 'rock', 'drama'],
+    bpm: 72,
+    energy_level: 6,
+    best_segments: [{ start: 0, end: 15 }, { start: 14, end: 30 }],
     created_at: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
   },
@@ -202,8 +235,53 @@ export const MOCK_SOUNDS: Sound[] = [
     category: 'Meme',
     mood: 'Funny',
     tags: ['meme', 'viral', 'kids', 'funny'],
+    bpm: 115,
+    energy_level: 5,
+    best_segments: [{ start: 0, end: 10 }, { start: 5, end: 15 }],
     created_at: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
     updated_at: new Date().toISOString(),
+  },
+];
+
+export const MOCK_CLIPS: Clip[] = [
+  {
+    id: 'clip-1',
+    title: 'NBA Highlights Reel',
+    tags: ['nba', 'basketball', 'dunks', 'highlights'],
+    tempo: 138,
+    energy: 9,
+    duration: 15,
+    file_url: '',
+    ai_mood: 'intense',
+    ai_pace: 'fast',
+    ai_category: 'NBA',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: 'clip-2',
+    title: 'Beach Sunset Vlog',
+    tags: ['travel', 'sunset', 'vibes', 'chill'],
+    tempo: 75,
+    energy: 3,
+    duration: 20,
+    file_url: '',
+    ai_mood: 'chill',
+    ai_pace: 'slow',
+    ai_category: 'Chill',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: 'clip-3',
+    title: 'Street Dance Battle',
+    tags: ['dance', 'street', 'battle', 'hype'],
+    tempo: 155,
+    energy: 8,
+    duration: 12,
+    file_url: '',
+    ai_mood: 'intense',
+    ai_pace: 'fast',
+    ai_category: 'Hype',
+    created_at: new Date().toISOString(),
   },
 ];
 
@@ -211,7 +289,7 @@ export function generateTrendHistory(soundId: string): TrendHistory[] {
   const sound = MOCK_SOUNDS.find(s => s.id === soundId);
   if (!sound) return [];
 
-  const points = 14; // 14 days of history
+  const points = 14;
   const history: TrendHistory[] = [];
   const baseViews = sound.reuse_count * 8;
   const baseUses = sound.reuse_count;
@@ -223,7 +301,12 @@ export function generateTrendHistory(soundId: string): TrendHistory[] {
 
     const views = Math.floor(baseViews * dayFactor * randomVariance * growthFactor * 0.15);
     const uses = Math.floor(baseUses * dayFactor * randomVariance * growthFactor * 0.1);
-    const growth_rate = i === points ? 0 : ((views - (history[history.length - 1]?.views ?? views * 0.8)) / Math.max(history[history.length - 1]?.views ?? 1, 1)) * 100;
+    const growth_rate =
+      i === points
+        ? 0
+        : ((views - (history[history.length - 1]?.views ?? views * 0.8)) /
+            Math.max(history[history.length - 1]?.views ?? 1, 1)) *
+          100;
 
     history.push({
       id: i,

@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Audio Intel — Trending Audio Dashboard',
+  title: 'Audio Intel — Trending Audio Intelligence',
   description:
-    'Real-time intelligence on trending audio used in short-form content. Discover what sounds are growing, where they are being used, and how fast.',
-  keywords: ['trending audio', 'short form content', 'tiktok sounds', 'viral audio', 'audio trends'],
+    'Real-time intelligence on trending audio. Discover what sounds are growing, match them to your clips, and generate ready-to-post content.',
+  keywords: ['trending audio', 'short form content', 'tiktok sounds', 'viral audio', 'audio trends', 'clip matcher'],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -27,12 +27,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 Audio<span className="text-[#00ff88]">Intel</span>
               </span>
             </a>
-            <div className="flex items-center gap-4 text-xs text-[#444] font-mono">
+            <nav className="flex items-center gap-1">
+              <a
+                href="/"
+                className="px-3 py-1.5 rounded-lg text-xs font-mono text-[#555] hover:text-[#888] hover:bg-[#111] transition-colors"
+              >
+                Dashboard
+              </a>
+              <a
+                href="/match"
+                className="px-3 py-1.5 rounded-lg text-xs font-mono text-[#555] hover:text-[#888] hover:bg-[#111] transition-colors flex items-center gap-1.5"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00e5ff]" />
+                Clip Matcher
+              </a>
+            </nav>
+            <div className="flex items-center gap-4 text-xs text-[#444] font-mono ml-2">
               <span className="hidden sm:flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] animate-pulse" />
                 Live
               </span>
-              <span className="hidden sm:block">v0.1.0</span>
+              <span className="hidden sm:block">v0.2.0</span>
             </div>
           </div>
         </header>
